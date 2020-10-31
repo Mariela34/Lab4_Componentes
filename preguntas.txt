@@ -1,0 +1,61 @@
+==================================================== PREGUNTAS ==========================================================
+
+
+Qué es y para que sirve el archivo web.xml?
+R/Define las rutas de los Container de Servlets y Filters de Spring, adem[as de crear los containers compartidos y es el que procesa y define los parametros del servlet que se van a utilizar y necesitar, ademas de crear 
+
+Qué es un listener en java web development?
+R/Es el encargado de gestionar los eventos, en este caso de crea los containers de Context Loader Listener del Spring 
+
+Qué es un servlet? Qué especifican las etiquetas servlet, servlet-name, servlet-class en web.xml?
+R/Los servlets son modulos escritos, generados para extender un servidor.
+Especifican los tipo de modulos servlet que se van a necesitar para llevar a cabo el codigo. "servlet" se utiliza para invocar un servlet y "servlet-name" es el nombre del servlet que queremos establecer.
+"server-class" especificara la clase que se va a importar desde la web de springframework
+
+Para qué sirve el archivo root-context.xml?
+R/Va a especificar en donde se encuentra la clase bean que deseamos correr y asociar, es decir, define cuales son los recursos que van a poder ser visibles en la web
+
+Para qué sirve el archivo servlet-context.xml?
+R/Es necesario para poder definir donde va a estar ubicadas las vistas y bajo que tipo de extension, ademas de definir cual es el paquete base. tambien de habilitar los componentes declarados en el root-context.xml
+
+
+En servlet-context:
+i. Para qué sirve la etiqueta annotation-driven?
+R/Usado para habilitar los componentes y Controllers de MVC de Spring
+
+ii. Para qué se configura el vean de la clase InternalResourceViewResolver? Qué archivos están involucrados y por qué?
+R/Para poder identificar en donde estaran ubicadas las vistas de la aplicacion y bajo que tipo de extension. los archivos involucrados son los .jsp porque son los archivos que contienen el contenido HTML que es el que se va a mostrar en la web.
+
+iii. Para qué sirve la etiqueta context:component-scan? Qué configura?
+R/Sirve para especificarle a Spring indicar que las acotaciones se van a hacer atraves de beans.
+Configura el paquete base para poder identificar en que paquete se encuentran esos beans
+
+En el archivo root-context.xml:
+i. Qué relación tiene los xsi:schemaLocation con las etiquetas context:component-scan y mvc:annotation-driven ?
+R/que los 3 habilitan y buscan una ubicacion para habilitar el uso de su representacion
+
+
+ii. Las características y atributos de cada etiqueta de las mencionadas
+xsi:schemaLocation = habilita una url de spring
+context:component-scan = especifica el paquete base en donde buscará los controllers y clases
+mvc:annotation-driven = habilita el uso de Controllers de MVC Spring
+
+iii. Qué se define en bean? Y qué relación tiene con el archivo home.jsp?
+R/El bean creador en root-context.xml es para poder saber en dónde está la clase que queremos enlazarle al bean, y este bean esen el servlet-context.xml se le asocia la conexión con las vistas .jsp
+
+En la clase HomeController.java,
+
+i. para qué sirve la anotación @Controller?
+R/Define los controllers en los que se va a componer el MVC de Spring
+
+ii. Para qué sirve la anotación @Autowired
+R/Para autoinicializar un objeto, sin necesidad de hacerlo de manera manual
+
+iii. Para qué sirve la anotación @RequestMapping y sus atributos?
+R/El @RequestMapping sirve para establecer una url de mapeo, es decir, para establecer una ruta de mapeo, el value es para definirle la ruta del mapeo y el atributo que le sigue es que el que define el tipo de request que se va a realizar, ya sea, un post, get, delete, put.
+
+
+iv. Qué es la clase Model referida? Y Locale?
+R/Es el que está representando el modelo del MVC, este va a obtener cierta información que con ayuda del controller, va a poder tener interacción con las vistas
+
+
